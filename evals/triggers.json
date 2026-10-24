@@ -1,0 +1,85 @@
+{
+  "skill_name": "persian-writer",
+  "evals": [
+    {
+      "query": "دمت گرم یه نامه رسمی واسه اداره مالیات بنویس بگو چرا اظهارنامه دیر شد",
+      "should_trigger": true
+    },
+    {
+      "query": "Translate this product launch announcement into natural Persian for our Iranian users.",
+      "should_trigger": true
+    },
+    {
+      "query": "این متن خیلی بوی ترجمه و هوش مصنوعی میده، بازنویسیش کن که طبیعی بشه",
+      "should_trigger": true
+    },
+    {
+      "query": "Write the Persian error messages and empty states for our mobile app's login and OTP screen.",
+      "should_trigger": true
+    },
+    {
+      "query": "برای پیج اینستاگراممون ۳ تا کپشن خودمونی درباره قهوه تخصصی بنویس",
+      "should_trigger": true
+    },
+    {
+      "query": "یک متن نریشن ۴۵ ثانیه‌ای برای ویدیوی معرفی اپلیکیشن مالی به فارسی گفتاری بنویس",
+      "should_trigger": true
+    },
+    {
+      "query": "نیم‌فاصله‌ها، ی و ک، و غلط‌های نگارشی این متن فارسی رو طبق دستور خط فرهنگستان ویرایش کن",
+      "should_trigger": true
+    },
+    {
+      "query": "Write a B2B proposal in Persian for redesigning an e-commerce site, price 85M toman.",
+      "should_trigger": true
+    },
+    {
+      "query": "پرامپت و متن پیامک دعوت به برنامه پادا رو طوری بنویس که زیر ۱۴۰ کاراکتر و طبیعی باشه",
+      "should_trigger": true
+    },
+    {
+      "query": "یک بخش آموزشی کوتاه به فارسی درباره تفاوت کش سمت سرور و سمت کاربر بنویس",
+      "should_trigger": true
+    },
+    {
+      "query": "Write a Python script that parses JSON logs and outputs a CSV summary.",
+      "should_trigger": false
+    },
+    {
+      "query": "Fix the TypeScript type error in src/components/Header.tsx.",
+      "should_trigger": false
+    },
+    {
+      "query": "Configure nginx reverse proxy with WebSocket support on Ubuntu.",
+      "should_trigger": false
+    },
+    {
+      "query": "Translate this English marketing email into natural German for DACH customers.",
+      "should_trigger": false
+    },
+    {
+      "query": "How do I set up a GitHub Actions workflow for pytest?",
+      "should_trigger": false
+    },
+    {
+      "query": "Optimize this PostgreSQL query that joins orders and line_items.",
+      "should_trigger": false
+    },
+    {
+      "query": "Write an English cover letter for a senior backend engineer role.",
+      "should_trigger": false
+    },
+    {
+      "query": "Explain how ESP32 deep sleep wakeup pins work in PlatformIO.",
+      "should_trigger": false
+    },
+    {
+      "query": "Create a Tailwind CSS grid layout with three responsive cards.",
+      "should_trigger": false
+    },
+    {
+      "query": "Debug why my Docker container exits with code 137.",
+      "should_trigger": false
+    }
+  ]
+}
