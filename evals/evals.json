@@ -1,10 +1,192 @@
 {
   "skill_name": "persian-writer",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "suites": {
+    "product_ux": "Product & UX Writing (محصول و رابط کاربری)",
+    "marketing_copy": "Marketing & Copywriting (مارکتینگ و تبلیغات)",
+    "translation_anticalque": "Translation, Tech Docs & B2B (ترجمه، مستندات فنی و B2B)",
+    "formal_orthography": "Formal, Admin, Academic & Proofreading (رسمی، اداری، علمی و ویراستاری)"
+  },
   "evals": [
     {
       "id": 1,
-      "name": "register-tripwire-tax-letter",
+      "suite": "product_ux",
+      "name": "ux-login-validation-errors",
+      "expected_register": "formal-human",
+      "prompt": "برای صفحه ورود با شماره موبایل در اپلیکیشن فارسی، متن‌های زیر رو به فارسی رسمیِ روان و کوتاه بنویس (هر خط حداکثر ۱۲ کلمه، بدون کلمات اداری مثل می‌باشد یا جهت):\n۱. خطای شروع اشتباه شماره (مثلاً با ۰۸ شروع شده)\n۲. خطای کامل نبودن ۱۱ رقم شماره موبایل\n۳. خطای قطع بودن اینترنت هنگام ارسال کد تأیید\n۴. متن دکمه اصلی دریافت کد و دکمه انصراف (یکدست از نظر دستوری)",
+      "expected_output": "Crisp, actionable Persian UX microcopy with Persian digits (۰۹, ۱۱), active verbs, zero bureaucratic fossils, and grammatically matched button labels.",
+      "files": [],
+      "expectations": [
+        "All error strings are concise (<15 words), active, and state how to fix the issue",
+        "Uses Persian digits (۰۹، ۱۱)",
+        "Zero می‌باشد / گردید / جهت / توسط",
+        "Button pair uses consistent grammatical form (both verbal nouns or both imperatives)"
+      ]
+    },
+    {
+      "id": 2,
+      "suite": "product_ux",
+      "name": "ux-empty-states-and-permissions",
+      "expected_register": "formal-human",
+      "prompt": "برای اپلیکیشن خانه هوشمند، سه متن کوتاه رابط کاربری به فارسی رسمیِ روان بنویس:\n۱. وضعیت خالی (Empty State) برای صفحه «ترددهای امروز» وقتی هنوز هیچ دری باز نشده (تیتر + یک خط توضیح).\n۲. دیالوگ درخواست دسترسی بلوتوث (توضیح بده که برنامه برای باز کردن درِ ساختمان در زمان قطع اینترنت به بلوتوث نیاز داره + متن دو دکمه «فعلاً نه» و دکمه تایید).\n۳. دیالوگ تأیید حذف دسترسی یک عضو خانواده به نام «سارا» (تیتر + توضیح نتیجه کار + دو دکمه).",
+      "expected_output": "Clear, reassuring, non-bureaucratic UX copy for empty state, Bluetooth permission rationale, and destructive confirmation modal with unambiguous button labels.",
+      "files": [],
+      "expectations": [
+        "Empty state is warm, concise, and avoids «هیچ آیتمی در این لیست وجود ندارد»",
+        "Bluetooth prompt explains the concrete benefit (opening doors without internet) without scary jargon",
+        "Destructive modal clearly states the consequence for «سارا» and uses specific action buttons (e.g. حذف دسترسی / انصراف)",
+        "Zero می‌باشد / گردید / جهت / توسط"
+      ]
+    },
+    {
+      "id": 3,
+      "suite": "product_ux",
+      "name": "ux-onboarding-light-colloquial",
+      "expected_register": "light-colloquial",
+      "prompt": "برای ۳ اسلاید اول آنبوردینگ (خوش‌آمدگویی) یک اپلیکیشن مدیریت خرج‌وومخارج شخصی، متن کوتاه به «فارسی محاوره‌ای نرم» (مناسب داخل محصول: فعل‌ها و ضمیرهای شکسته مثل می‌تونید/می‌شه/خرج‌هاتون/پول‌تون، ولی با حفظ «را» و «این/آن»، بدون کلمات عامیانه مثل واسه/توش/اونا/رو) بنویس. هر اسلاید یک تیتر کوتاه و یک خط توضیح داشته باشه. فقط متن رو بده.",
+      "expected_output": "3 onboarding slides in consistent light-colloquial register: spoken polite-plural verbs (می‌تونید، می‌شه، می‌ره) and -تون clitics (خرج‌هاتون/پول‌تون) paired with standard را and این/آن.",
+      "files": [],
+      "expectations": [
+        "Uses spoken verbs (می‌تونید / می‌شه / می‌ره) and -تون clitics (خرج‌هاتون / پول‌تون) harmoniously",
+        "Retains را and این/آن (does not use رو / اون / واسه / توش)",
+        "Avoids the English calque «ردیابی پول» (uses ثبت/مدیریت خرج‌ها or حساب‌وکتاب)"
+      ]
+    },
+    {
+      "id": 4,
+      "suite": "product_ux",
+      "name": "ux-sms-and-push-notifications",
+      "expected_register": "formal-human",
+      "prompt": "سه متن اعلان کوتاه (هر کدام حداکثر ۱۲۰ کاراکتر) به فارسی رسمیِ روان بنویس:\n۱. پیامک دعوت به برنامه «پادا» از طرف «حمیدرضا» (به دلیل محدودیت مخابرات هیچ لینکی در پیامک نباشه؛ بگو برنامه پادا رو نصب کنن و با همین شماره وارد بشن).\n۲. نوتیفیکیشن کاهش باتری سنسور درِ ورودی به ۱۵٪ و لزوم تعویض باتری سکه‌ای CR2450.\n۳. بنر کوتاه داخل اپ وقتی اینترنت ساختمان قطع شده ولی باز کردن در با بلوتوث از نزدیک کار می‌کنه.",
+      "expected_output": "3 ultra-crisp notifications (<120 chars each) leading with the core signal, Persian digits (۱۵٪), Latin technical code (CR2450), no URL in SMS, zero bureaucratic padding.",
+      "files": [],
+      "expectations": [
+        "SMS has no URL/link, names حمیدرضا and پادا early, and tells recipient to sign in with the same number",
+        "Battery alert uses ۱۵٪ in Persian digits and keeps CR2450 in Latin script",
+        "Offline banner reassures the user immediately that Bluetooth unlocking works nearby",
+        "Each message is under 120 characters and contains zero می‌باشد / به استحضار می‌رساند"
+      ]
+    },
+    {
+      "id": 5,
+      "suite": "marketing_copy",
+      "name": "mkt-landing-hero-and-features",
+      "expected_register": "formal-human",
+      "prompt": "برای بخش بالای صفحه اول (Hero) و ۳ کارت ویژگیِ وب‌سایت یک سیستم دسترسی هوشمند ساختمان، کپی تبلیغاتی به فارسی رسمیِ روان، امروزی و قانع‌کننده بنویس. واقعیت‌های محصول:\n- یک دستگاه هم درِ نفررو و هم جک پارکینگ را از روی گوشی باز می‌کند.\n- حتی موقع قطع اینترنت، از نزدیک با بلوتوث کار می‌کند.\n- برای مهمان یا پیک می‌شود کلید زمان‌دار ساخت.\n- ۱۸ ماه گارانتی تعویض دارد و نصبش بدون تغییر سیم‌کشی ساختمان است.\nساختار خروجی: تیتر اصلی (Headline)، زیرتیتر، دکمه اصلی و فرعی، و ۳ کارت ویژگی (تیتر + ۱ جمله). بدون صفت‌های توخالی مثل بی‌نظیر و تحول‌آفرین.",
+      "expected_output": "High-converting, concrete Persian landing page copy with punchy Hero headline, subheadline, dual CTAs, and 3 specific feature cards using Persian digits (۱۸ ماه) and zero fluff adjectives.",
+      "files": [],
+      "expectations": [
+        "Includes Hero headline, subheadline, primary/secondary CTAs, and 3 feature cards",
+        "Covers all 4 concrete product facts (both doors, offline Bluetooth, timed guest keys, ۱۸-month warranty & no rewiring)",
+        "Zero empty promotional adjectives (بی‌نظیر، منحصربه‌فرد، تحول‌آفرین، شگفت‌انگیز) and zero می‌باشد"
+      ]
+    },
+    {
+      "id": 6,
+      "suite": "marketing_copy",
+      "name": "mkt-humanize-ai-copy",
+      "expected_register": "formal-human",
+      "prompt": "این متن رو هوش مصنوعی نوشته و پر از عبارت‌های کلیشه‌ای و ترجمه‌زده است. برای صفحه «معرفی محصول» سایت، به فارسی رسمیِ روان و طبیعی بازنویسیش کن. همه اطلاعات واقعیِ داخل متن حفظ بشه و هیچ ویژگی خیالی اضافه نکن. فقط متن نهایی رو بده:\n\n# درباره سامانه هوشمند پادا\n\nدر دنیای امروز، امنیت و آسایش ساختمان‌ها از اهمیت ویژه‌ای برخوردار می‌باشد. سیستم‌های کنترل تردد هوشمند نه تنها ابزاری جهت باز نمودن درب‌ها محسوب می‌شوند، بلکه همچنین نقش بسزایی در ارتقای سبک زندگی ساکنان ایفا می‌کنند. لازم به ذکر است که سامانه ما توسط مهندسان مجرب طراحی گردیده است و شما را قادر می‌سازد تا تجربه‌ای بی‌نظیر و منحصربه‌فرد از ورود به ساختمان داشته باشید.\n\nمزایای استفاده از این سامانه شامل موارد زیر می‌باشد:\n- **سرعت بالا:** باز شدن درب ورودی و پارکینگ در کمتر از 2 ثانیه — که نشان‌دهنده کیفیت بالای سخت‌افزار ما می‌باشد.\n- **مدیریت دسترسی:** شما قادر به تعریف کلیدهای زمان‌دار جهت مهمانان خود خواهید بود.\n- **امنیت تضمین‌شده:** تمامی ارتباطات توسط پروتکل‌های پیشرفته مورد رمزنگاری قرار می‌گیرند.\n\nدر پایان روز، انتخاب این محصول گامی مهم در راستای هوشمندسازی ساختمان شما به شمار می‌رود. گاهاً کاربران نگران قطع برق می‌باشند، اما سیستم ما دارای باتری پشتیبان است. جهت کسب اطلاعات بیشتر با ما تماس حاصل فرمایید. امیدوارم این مطلب برای شما مفید بوده باشد!\n",
+      "expected_output": "Clean, active, natural formal-human Persian retaining all 4 product facts, stripping در دنیای امروز, می‌باشد, در راستای, نه تنها بلکه همچنین, توسط, مورد رمزنگاری قرار می‌گیرند, گاهاً, em-dashes, and chatbot sign-off, without inventing unstated features.",
+      "files": [
+        "evals/files/ai-draft-marketing.md"
+      ],
+      "expectations": [
+        "Preserves all 4 concrete facts (<2 seconds, guest timed keys, encryption, battery backup) without inventing unstated features",
+        "Removes all banned fossils (می‌باشد، گردیده، در راستای، لازم به ذکر است، در دنیای امروز، در پایان روز)",
+        "Removes fake tanvin گاهاً (replaces with گاهی) and passive توسط",
+        "Uses Persian digits (۲) and zero em-dashes (—)"
+      ]
+    },
+    {
+      "id": 7,
+      "suite": "marketing_copy",
+      "name": "mkt-instagram-captions-colloquial",
+      "expected_register": "full-colloquial",
+      "prompt": "برای پیج اینستاگرام یک کافه محلی ۲ تا کپشن صمیمی و کاملاً محاوره‌ای (خودمونی) بنویس درباره اینکه قهوه سرددم (کلد برو) تابستونی آماده شده و هر روز ۱۴ ساعت دم می‌کشه. هر کپشن یه شروع جذاب و یه دعوت به اقدام در آخرش داشته باشه. فقط متن کپشن‌ها رو بده.",
+      "expected_output": "2 authentic full-colloquial Instagram captions using رو, اون/اینا, می‌شه/می‌کشه, Persian digits (۱۴), correct ZWNJ in colloquial verbs, preserved silent-ه clitics (آماده‌ست/مزه‌ش), and zero هکسره or formal است/می‌شود leakage.",
+      "files": [],
+      "expectations": [
+        "Uses full colloquial register consistently (رو، می‌شه، می‌کشه، ـه)",
+        "Zero formal leakage (no است، می‌شود، را، آن‌ها)",
+        "Zero هکسره errors and preserves silent ه with ZWNJ in clitics (آماده‌ست، مزه‌ش، نتیجه‌ش)",
+        "Uses Persian digits (۱۴) and keeps ZWNJ on colloquial می verbs"
+      ]
+    },
+    {
+      "id": 8,
+      "suite": "marketing_copy",
+      "name": "mkt-video-voiceover-script",
+      "expected_register": "full-colloquial",
+      "prompt": "یک متن نریشن (گفتاریِ شکسته برای گوینده ویدیو) حدود ۸۰ تا ۱۰۰ کلمه بنویس درباره اینکه چرا عادت‌های کوچیک روزانه از هدف‌های بزرگ اول سال مهم‌ترن. جمله‌ها کوتاه و یک‌نفس باشن و ریتم طبیعی گفتار داشته باشن. فقط متن نریشن رو بده.",
+      "expected_output": "Complete, untruncated spoken Persian narration script (~80-100 words) with breath-length clauses, Iranian cultural anchor (اول سال/نوروز), ZWNJ on spoken verbs, and zero formal کتابی leakage.",
+      "files": [],
+      "expectations": [
+        "Complete script (~80-100 words) with a natural closing sentence",
+        "Holds spoken register from start to finish with zero formal است/می‌شود/را/این‌ها",
+        "Short breath-length clauses suitable for reading aloud and culturally accurate (اول سال, not اول بهمن)"
+      ]
+    },
+    {
+      "id": 9,
+      "suite": "translation_anticalque",
+      "name": "tr-saas-release-announcement",
+      "expected_register": "formal-human",
+      "prompt": "این پاراگراف انگلیسی رو به فارسی رسمیِ روان (برای وب‌سایت محصول) ترجمه کن؛ ترجمه کلمه‌به‌کلمه نباشه و بوی ترجمه نده، اما هیچ جمله‌ای رو هم حذف نکن. فقط متن فارسی رو بده:\n\n\"At the end of the day, managing building access shouldn't be a headache. Our smart controller was designed by experienced hardware engineers to enable you to open both the lobby door and the parking gate from your phone. Not only does it work without an internet connection over Bluetooth, but it also allows you to share temporary access keys with guests in seconds. Unlock your building's potential today.\"",
+      "expected_output": "Verb-centric, idiomatic formal-human Persian translation translating all 4 sentences while avoiding literal calques ('در پایان روز', 'توسط مهندسان طراحی شد', 'شما را قادر می‌سازد', 'نه تنها... بلکه همچنین', 'پتانسیل ساختمان خود را آزاد کنید').",
+      "files": [],
+      "expectations": [
+        "Translates all 4 sentences (including a natural Persian rendering of the final CTA sentence)",
+        "Avoids literal calques: no در پایان روز, no توسط مهندسان, no شما را قادر می‌سازد, no نه تنها ... بلکه همچنین, no پتانسیل ... آزاد کنید",
+        "Uses active voice and natural Persian connectors (هم ... و هم ...)"
+      ]
+    },
+    {
+      "id": 10,
+      "suite": "translation_anticalque",
+      "name": "tr-technical-rate-limit-doc",
+      "expected_register": "formal-human",
+      "prompt": "این متن مستندات فنی رو به فارسی فنیِ ساده، شفاف و بی‌ابهام بازنویسی کن (جمله‌های کوتاه، فعل معلوم یا امری، حفظ اصطلاحات انگلیسی استاندارد مثل API و Webhook و HTTP 429، دوزبانه‌سازی اصطلاحات مفهومی در اولین اشاره، و حذف تمام عبارت‌های اداری مثل مورد استفاده قرار گرفتن و اقدام به نمودن). فقط متن نهایی رو بده:\n\n«در هنگامی که تعداد درخواست‌های ارسال گردیده توسط کلاینت به سمت سرور از حد مجاز عبور نماید، کد خطای 429 توسط API برگردانده خواهد شد و پردازش درخواست مورد توقف قرار می‌گیرد. لازم به ذکر است که جهت جلوگیری از مسدود شدن کلید دسترسی، توسعه‌دهندگان می‌بایست اقدام به پیاده‌سازی مکانیزم تاخیر نمایی نموده و پس از گذشت زمان مشخص شده در هدر Retry-After، نسبت به ارسال مجدد درخواست‌های Webhook اقدام نمایند.»",
+      "expected_output": "Clear, unambiguous Persian technical documentation using active voice and polite plural imperatives, pairing تأخیر نمایی (Exponential Backoff), keeping HTTP 429 / API / Webhook / Retry-After inline, and zero می‌باشد/گردید/توسط/مورد...قرار گرفتن.",
+      "files": [],
+      "expectations": [
+        "Eliminates all bureaucratic wrappers (ارسال گردیده توسط، مورد توقف قرار می‌گیرد، لازم به ذکر است، جهت، اقدام به ... نموده، نسبت به ... اقدام نمایند)",
+        "Uses active verbs for system behavior and direct imperatives (پیاده‌سازی کنید / دوباره بفرستید) for developer actions",
+        "Keeps API, Webhook, HTTP 429, and Retry-After in Latin script and pairs تأخیر نمایی (Exponential Backoff)"
+      ]
+    },
+    {
+      "id": 11,
+      "suite": "translation_anticalque",
+      "name": "tr-b2b-proposal",
+      "expected_register": "formal-human",
+      "prompt": "یک پروپوزال یک‌صفحه‌ای و خوش‌خوان به فارسی برای «طراحی سایت فروشگاهی رستوران سنتی نارنج» بنویس. بخش‌ها: ۱. هدف و معرفی کوتاه، ۲. سه مرحله اجرای پروژه (طراحی رابط کاربری، پیاده‌سازی فروشگاه و درگاه پرداخت، تست و آموزش)، ۳. زمان‌بندی و هزینه (۴۵ روز کاری، ۸۵ میلیون تومان در سه قسط)، ۴. گام بعدی (دعوت به یک جلسه ۱۵ دقیقه‌ای). لحن: رسمیِ روان و گرم (نه خشک و اداری با می‌باشد، نه عامیانه و خیابانی).",
+      "expected_output": "A complete, polished B2B proposal in formal-human register with all 4 sections, Persian digits (۴۵ روز کاری، ۸۵ میلیون تومان، ۱۵ دقیقه), concrete deliverables, warm professional closing CTA, zero می‌باشد/گردید and zero colloquial slang.",
+      "files": [],
+      "expectations": [
+        "Includes all 4 requested sections completely with clear structure and concrete deliverables",
+        "States ۴۵ روز کاری and ۸۵ میلیون تومان in Persian digits",
+        "Maintains pure formal-human register (zero می‌باشد/گردید/در راستای AND zero colloquialisms like خیالتون راحت/میشه)"
+      ]
+    },
+    {
+      "id": 12,
+      "suite": "translation_anticalque",
+      "name": "tr-seo-pricing-guide",
+      "expected_register": "semi-formal",
+      "prompt": "یک راهنمای کوتاه و سئو شده با موضوع «قیمت طراحی سایت فروشگاهی در ۱۴۰۵» بنویس (حدود ۳۵۰ تا ۴۵۰ کلمه). کلمه کلیدی اصلی: «قیمت طراحی سایت فروشگاهی». در ابتدای خروجی، «عنوان سئو» (حدود ۶۰ کاراکتر) و «توضیحات متا» (حدود ۱۵۰ کاراکتر) رو بنویس. پاراگراف اول مستقیماً جواب کاربر رو بده (بدون مقدمه‌چینی مثل در دنیای امروز). تیترهای فرعی (H2) سوال‌های واقعی کاربر باشن، قیمت‌ها رو بازه‌ای و شفاف به تومان بنویس، و در انتها بخش «سؤالات متداول» (۳ سوال کوتاه) بذار.",
+      "expected_output": "Complete SEO guide with Title Tag (~60 chars starting with keyword) + Meta Description (~150 chars), Answer-First intro paragraph, question-based H2s, transparent range pricing in تومان, 3-item FAQ, Persian digits, zero می‌باشد/در دنیای امروز.",
+      "files": [],
+      "expectations": [
+        "Includes عنوان سئو (~60 chars starting with قیمت طراحی سایت فروشگاهی) and توضیحات متا (~150 chars)",
+        "Opens with an Answer-First intro paragraph (zero در دنیای امروز / با پیشرفت تکنولوژی)",
+        "States realistic range prices in تومان with Persian digits and includes a complete 3-question سؤالات متداول section"
+      ]
+    },
+    {
+      "id": 13,
+      "suite": "formal_orthography",
+      "name": "fo-admin-tax-letter-tripwire",
       "expected_register": "formal-admin",
       "prompt": "دمت گرم یه نامه کوتاه واسه اداره مالیات بنویس، توش بگو شرکت ما (پادا گستر اسپادانا) به خاطر تغییر سرورهای حسابداری، اظهارنامه عملکرد ۱۴۰۴ رو ۱۰ روز دیرتر ارسال کرده و درخواست بخشودگی جریمه داریم. فقط متن نامه رو بده.",
       "expected_output": "A formal administrative letter (نامه اداری) with موضوع, formal recipient, با سلام و احترام, clean formal verbs (است/شد, never می‌باشد/گردید), zero colloquial leakage despite the slang prompt.",
@@ -17,102 +199,49 @@
       ]
     },
     {
-      "id": 2,
-      "name": "humanize-ai-marketing",
+      "id": 14,
+      "suite": "formal_orthography",
+      "name": "fo-orthography-he-kasre-repair",
       "expected_register": "formal-human",
-      "prompt": "این متن رو هوش مصنوعی نوشته و پر از عبارت‌های کلیشه‌ای و ترجمه‌زده است. برای صفحه «معرفی محصول» سایت، به فارسی رسمیِ روان و طبیعی بازنویسیش کن. همه اطلاعات واقعی (باز شدن در ورودی و پارکینگ زیر ۲ ثانیه، کلید زمان‌دار مهمان، رمزنگاری، باتری پشتیبان برق) حفظ بشه. فقط متن نهایی رو بده:\n\n# درباره سامانه هوشمند پادا\n\nدر دنیای امروز، امنیت و آسایش ساختمان‌ها از اهمیت ویژه‌ای برخوردار می‌باشد. سیستم‌های کنترل تردد هوشمند نه تنها ابزاری جهت باز نمودن درب‌ها محسوب می‌شوند، بلکه همچنین نقش بسزایی در ارتقای سبک زندگی ساکنان ایفا می‌کنند. لازم به ذکر است که سامانه ما توسط مهندسان مجرب طراحی گردیده است و شما را قادر می‌سازد تا تجربه‌ای بی‌نظیر و منحصربه‌فرد از ورود به ساختمان داشته باشید.\n\nمزایای استفاده از این سامانه شامل موارد زیر می‌باشد:\n- **سرعت بالا:** باز شدن درب ورودی و پارکینگ در کمتر از 2 ثانیه — که نشان‌دهنده کیفیت بالای سخت‌افزار ما می‌باشد.\n- **مدیریت دسترسی:** شما قادر به تعریف کلیدهای زمان‌دار جهت مهمانان خود خواهید بود.\n- **امنیت تضمین‌شده:** تمامی ارتباطات توسط پروتکل‌های پیشرفته مورد رمزنگاری قرار می‌گیرند.\n\nدر پایان روز، انتخاب این محصول گامی مهم در راستای هوشمندسازی ساختمان شما به شمار می‌رود. گاهاً کاربران نگران قطع برق می‌باشند، اما سیستم ما دارای باتری پشتیبان است. جهت کسب اطلاعات بیشتر با ما تماس حاصل فرمایید. امیدوارم این مطلب برای شما مفید بوده باشد!\n",
-      "expected_output": "Clean, active, natural formal-human Persian retaining all 4 product facts, stripping در دنیای امروز, می‌باشد, در راستای, نه تنها بلکه همچنین, توسط, مورد رمزنگاری قرار می‌گیرند, گاهاً, em-dashes, and chatbot sign-off.",
-      "files": [
-        "evals/files/ai-draft-marketing.md"
-      ],
-      "expectations": [
-        "Preserves all 4 concrete facts (<2 seconds, guest timed keys, encryption, battery backup)",
-        "Removes all banned fossils (می‌باشد، گردیده، در راستای، لازم به ذکر است، در دنیای امروز، در پایان روز)",
-        "Removes fake tanvin گاهاً (replaces with گاهی) and passive توسط",
-        "Uses Persian digits (۲) and zero em-dashes (—)"
-      ]
-    },
-    {
-      "id": 3,
-      "name": "english-to-persian-anti-calque",
-      "expected_register": "formal-human",
-      "prompt": "این پاراگراف انگلیسی رو به فارسی رسمیِ روان (برای وب‌سایت محصول) ترجمه کن؛ ترجمه کلمه‌به‌کلمه نباشه و بوی ترجمه نده. فقط متن فارسی رو بده:\n\n\"At the end of the day, managing building access shouldn't be a headache. Our smart controller was designed by experienced hardware engineers to enable you to open both the lobby door and the parking gate from your phone. Not only does it work without an internet connection over Bluetooth, but it also allows you to share temporary access keys with guests in seconds. Unlock your building's potential today.\"",
-      "expected_output": "Verb-centric, idiomatic formal-human Persian translation avoiding literal calques ('در پایان روز', 'توسط مهندسان طراحی شد', 'شما را قادر می‌سازد', 'نه تنها... بلکه همچنین', 'پتانسیل ساختمان خود را آزاد کنید').",
-      "files": [],
-      "expectations": [
-        "Avoids literal calques: no در پایان روز, no توسط مهندسان, no شما را قادر می‌سازد, no نه تنها ... بلکه همچنین, no پتانسیل ... آزاد کنید",
-        "Uses active voice and natural Persian connectors (هم ... و هم ...)",
-        "Keeps register strictly formal-human (no رو / می‌شه)"
-      ]
-    },
-    {
-      "id": 4,
-      "name": "ui-microcopy-login-errors",
-      "expected_register": "formal-human",
-      "prompt": "برای صفحه ورود با شماره موبایل در اپلیکیشن فارسی، متن‌های زیر رو به فارسی رسمیِ روان و کوتاه بنویس (هر خط حداکثر ۱۲ کلمه، بدون کلمات اداری مثل می‌باشد یا جهت):\n۱. خطای شروع اشتباه شماره (مثلاً با ۰۸ شروع شده)\n۲. خطای کامل نبودن۱۱ رقم شماره موبایل\n۳. خطای قطع بودن اینترنت هنگام ارسال کد تأیید\n۴. متن دکمه اصلی دریافت کد و دکمه انصراف (یکدست از نظر دستوری)",
-      "expected_output": "Crisp, actionable Persian UX microcopy with Persian digits (۰۹, ۱۱), active verbs, zero bureaucratic fossils, and grammatically matched button labels.",
-      "files": [],
-      "expectations": [
-        "All error strings are concise (<15 words), active, and state how to fix the issue",
-        "Uses Persian digits (۰۹، ۱۱)",
-        "Zero می‌باشد / گردید / جهت / توسط",
-        "Button pair uses consistent grammatical form (both verbal nouns or both imperatives)"
-      ]
-    },
-    {
-      "id": 5,
-      "name": "light-colloquial-onboarding",
-      "expected_register": "light-colloquial",
-      "prompt": "برای ۳ اسلاید اول آنبوردینگ (خوش‌آمدگویی) یک اپلیکیشن مدیریت هزینه‌های شخصی، متن کوتاه به «فارسی محاوره‌ای نرم» (مناسب داخل محصول: فعل‌های شکسته مثل می‌تونید/می‌شه، ولی با حفظ «را» و «این/آن»، بدون کلمات خیلی عامیانه مثل واسه/توش/اونا) بنویس. هر اسلاید یک تیتر کوتاه و یک خط توضیح داشته باشه. فقط متن رو بده.",
-      "expected_output": "3 onboarding slides in consistent light-colloquial register: spoken polite-plural verbs (می‌تونید، می‌شه، دارید) paired with standard را and این/آن, zero formal می‌شود/است and zero street slang (واسه/توش/رو).",
-      "files": [],
-      "expectations": [
-        "Uses spoken verbs (می‌تونید / می‌شه / داره) consistently",
-        "Retains را and این/آن (does not use رو / اون / واسه / توش)",
-        "Contains zero formal-only verbs (می‌شود / می‌توانید / می‌باشد)"
-      ]
-    },
-    {
-      "id": 6,
-      "name": "full-colloquial-instagram-captions",
-      "expected_register": "full-colloquial",
-      "prompt": "برای پیج اینستاگرام یک کافه محلی ۲ تا کپشن صمیمی و کاملاً محاوره‌ای (خودمونی) بنویس درباره اینکه قهوه سرددم (کلد برو) تابستونی آماده شده و هر روز ۱۴ ساعت دم می‌کشه. هر کپشن یه شروع جذاب و یه دعوت به اقدام در آخرش داشته باشه. فقط متن کپشن‌ها رو بده.",
-      "expected_output": "2 authentic full-colloquial Instagram captions using رو, اون/اینا, می‌شه/می‌کشه, Persian digits (۱۴), correct ZWNJ, and zero هکسره errors or formal است/می‌شود leakage.",
-      "files": [],
-      "expectations": [
-        "Uses full colloquial register consistently (رو، می‌شه، می‌کشه، ـه)",
-        "Zero formal leakage (no است، می‌شود، را، آن‌ها)",
-        "Zero هکسره errors (ezafe never written as ـه)",
-        "Uses Persian digits (۱۴)"
-      ]
-    },
-    {
-      "id": 7,
-      "name": "spoken-voiceover-narration",
-      "expected_register": "full-colloquial",
-      "prompt": "یک متن نریشن (گفتاریِ شکسته برای گوینده ویدیو) حدود ۸۰ تا ۱۰۰ کلمه بنویس درباره اینکه چرا عادت‌های کوچیک روزانه از هدف‌های بزرگ اول سال مهم‌ترن. جمله‌ها کوتاه و یک‌نفس باشن و ریتم طبیعی گفتار داشته باشن. فقط متن نریشن رو بده.",
-      "expected_output": "Spoken Persian narration script with breath-length clauses, natural discourse markers, selective ان→ون shifts on everyday words only, and zero formal کتابی leakage.",
-      "files": [],
-      "expectations": [
-        "Holds spoken register from start to finish with zero formal است/می‌شود/را",
-        "Short breath-length clauses suitable for reading aloud",
-        "Varied sentence rhythm (CV >= 0.30) and zero em-dashes"
-      ]
-    },
-    {
-      "id": 8,
-      "name": "orthography-and-he-kasre-repair",
-      "expected_register": "formal-human",
-      "prompt": "همه خطاهای نگارشی، نیم‌فاصله، هکسره، تنوین جعلی، اعداد، علائم نگارشی و عبارت‌های اداریِ این متن رو طبق دستور خط فرهنگستان ویرایش کن و به فارسی رسمیِ روان برگردون (فقط متن ویرایش‌شده رو بده):\n\nسلام، لطفا متن زير را بررسي كنيد?\nگاهاً در پروژه هاي نرم افزاري، مستندات به خوبي نوشته نمي شوند. اولاً تيم فني وقت كافي ندارد، دوماً نويسنده ي متن با دستور خط آشنا نيست!\nمثلا ديروز كتابه من و برگه ی قرارداد در خانه ی ما جا ماند و مجبور شدم تلفناً با مدير صحبت كنم. اين روش خيلي بزرگ تر و مهم ترين بخش از 5 مرحله هاي پروژه است — و توسط تيم ما مورد تاييد قرار گرفت.\n",
-      "expected_output": "Clean, standard Persian text with ی/ک, لطفاً, گاهی, اول اینکه/دوم اینکه, پروژه‌های نرم‌افزاری, کتاب من, برگهٔ/برگه‌ی قرارداد, خانه‌ی/خانهٔ ما, تلفنی, بزرگ‌تر, ۵ مرحلهٔ پروژه (singular noun after number), and تایید کرد.",
+      "prompt": "همه خطاهای نگارشی، نیم‌فاصله، هکسره، تنوین جعلی، هماهنگی صفت‌ها، اعداد، علائم نگارشی و عبارت‌های اداریِ این متن رو طبق دستور خط فرهنگستان ویرایش کن و به فارسی رسمیِ روان برگردون (فقط متن ویرایش‌شده رو بده):\n\nسلام، لطفا متن زير را بررسي كنيد?\nگاهاً در پروژه هاي نرم افزاري، مستندات به خوبي نوشته نمي شوند. اولاً تيم فني وقت كافي ندارد، دوماً نويسنده ي متن با دستور خط آشنا نيست!\nمثلا ديروز كتابه من و برگه ی قرارداد در خانه ی ما جا ماند و مجبور شدم تلفناً با مدير صحبت كنم. اين روش خيلي بزرگ تر و مهم ترين بخش از 5 مرحله هاي پروژه است — و توسط تيم ما مورد تاييد قرار گرفت.\n",
+      "expected_output": "Clean, standard Persian text with ی/ک, لطفاً, گاهی, اول اینکه/دوم اینکه (or اولاً/ثانیاً), پروژه‌های نرم‌افزاری, کتاب من, برگهٔ/برگه‌ی قرارداد, خانه‌ی/خانهٔ ما, تلفنی, بزرگ‌ترین و مهم‌ترین بخش از ۵ مرحلهٔ پروژه (harmonized superlatives + singular noun after number), and تیم ما آن را تأیید کرد.",
       "files": [
         "evals/files/broken-orthography.md"
       ],
       "expectations": [
         "Replaces Arabic ي/ك with Persian ی/ک and ASCII ? with ؟",
-        "Fixes گاهاً → گاهی, دوماً → دوم اینکه, تلفناً → تلفنی, لطفا → لطفاً",
+        "Fixes گاهاً → گاهی, دوماً → دوم اینکه/ثانیاً, تلفناً → تلفنی, لطفا → لطفاً",
         "Fixes کتابه من → کتاب من and خانه ی ما → خانه‌ی ما / خانهٔ ما",
-        "Fixes ۵ مرحله‌های پروژه → ۵ مرحلهٔ/مرحله‌ی پروژه (singular noun after number) and removes توسط/مورد تایید قرار گرفت"
+        "Harmonizes بزرگ تر و مهم ترین بخش → بزرگ‌ترین و مهم‌ترین بخش, fixes ۵ مرحله‌های پروژه → ۵ مرحلهٔ پروژه, and removes توسط/مورد تایید قرار گرفت"
+      ]
+    },
+    {
+      "id": 15,
+      "suite": "formal_orthography",
+      "name": "fo-academic-abstract-intro",
+      "expected_register": "formal-human",
+      "prompt": "برای مقاله‌ام با موضوع «تأثیر یادگیری ماشین در تشخیص بیماری‌های پوستی» یک چکیده (حدود ۱۲۰ تا ۱۶۰ کلمه شامل واژگان کلیدی) و بخش مقدمه (حدود ۲۰۰ تا ۲۵۰ کلمه) به فارسی علمی و استاندارد بنویس. مقطع کارشناسی ارشد. یافته فرضی: دقت مدل ۹۱٪ روی ۲۴۰۰ تصویر درماتوسکوپی. منابع واقعی نداری، پس جای ارجاع‌ها از [منبع] استفاده کن و منبع خیالی نساز. فقط متن نهایی رو بده.",
+      "expected_output": "Complete Persian academic چکیده + واژگان کلیدی + funnel-shaped مقدمه ending at the research gap, synthesized background, [منبع] placeholders (zero fabricated citations), Persian digits (۹۱٪، ۲۴۰۰), zero می‌باشد/گردید/اولاً/ثانیاً.",
+      "files": [],
+      "expectations": [
+        "Complete چکیده, واژگان کلیدی, and funnel-shaped مقدمه ending at the research gap",
+        "Uses [منبع] placeholders and fabricates zero author names or years",
+        "Preserves exact metrics (۹۱٪ accuracy on ۲۴۰۰ images) in Persian digits",
+        "Contains zero می‌باشد / گردید / اولاً / ثانیاً"
+      ]
+    },
+    {
+      "id": 16,
+      "suite": "formal_orthography",
+      "name": "fo-colloquial-to-standard-conversion",
+      "expected_register": "formal-human",
+      "prompt": "این گزارش محاوره‌ای و شلختهٔ کارشناس پشتیبانی رو به یک گزارش رسمیِ روان، دقیق و استاندارد برای ثبت در پروندهٔ فنی مشتری تبدیل کن (همهٔ ساعت‌ها و جزئیات فنی حفظ بشه، فقط متن نهایی رو بده):\n\n«دیروز چهارشنبه ساعت 4 و ربع بعدازظهر وقتی مشتری اومد با اپ درب پارکینگ رو باز کنه، رو گوشیش ارور داد که ارتباط با دستگاه برقرار نمیشه. بررسی که کردیم دیدیم آداپتور برق آیفون تو پارکینگ سوخته بوده و دستگاه از ساعت 2 ظهر رفته بوده رو برق اضطراری، ولی چون فاصله گوشی مشتری زیاد بوده بلوتوثش وصل نشده. ساعت 6 غروب تکنسین رفت آداپتور 12 ولت رو عوض کرد و الان همه‌چی اوکیه و بدون مشکل کار میکنه.»",
+      "expected_output": "Clean, standard formal-human technical incident report preserving all timestamps (۴:۱۵ بعدازظهر، ۲ ظهر، ۶ عصر) and root-cause details (۱۲-volt intercom adapter burnout, backup power switch, Bluetooth range), converting all colloquialisms (اومد، رو گوشیش، نمیشه، اوکیه) to standard Persian without bureaucratic fossils (می‌باشد/گردید).",
+      "files": [],
+      "expectations": [
+        "Preserves every timestamp (چهارشنبه، ۱۶:۱۵ / ۴ و ربع بعدازظهر، ۱۴:۰۰ / ۲ ظهر، ۱۸:۰۰ / ۶ عصر) and technical detail (آداپتور ۱۲ ولت، برق اضطراری، برد بلوتوث) in Persian digits",
+        "Converts all spoken forms (اومد، رو گوشیش، ارور داد، نمیشه، اوکیه، کار میکنه) to standard formal-human Persian",
+        "Uses zero banned bureaucratic fossils (no می‌باشد / گردید / نمود / توسط)"
       ]
     }
   ]

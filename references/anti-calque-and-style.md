@@ -64,6 +64,18 @@ English requires *a/an* before singular count nouns; Persian uses the enclitic `
 
 ---
 
+
+### 1.8 🔴 Pro-Drop Discipline: Drop Redundant Subject Pronouns (`شما / من / ما`)
+Persian is a pro-drop language: the verb ending (`-م، -ی، -د، -یم، -ید، -ند`) already encodes the subject. Repeating `شما`, `من`, or `ما` in every clause is a loud English calque (*"You can create an account and you can..."*):
+- ❌ `شما می‌توانید فاکتور بسازید و شما می‌توانید آن را برای مشتری بفرستید.`
+- ✅ `می‌توانید فاکتور بسازید و آن را برای مشتری بفرستید.`
+- **Point-of-View (POV) Discipline:**
+  - Explain how the system or concept works **impersonally** (`پس از پرداخت، سفارش ثبت می‌شود`).
+  - Address steps the reader takes using **second-person verbs without repeating `شما`** (`گزینهٔ ویرایش را انتخاب کنید`).
+  - Use **`ما` / first-person plural** only for the organization's own actions, guarantees, or decisions (`تا ۴۵ روز کاری سایت را تحویل می‌دهیم`). Never flip randomly between `کاربر`, `شما`, and `ما` in the same paragraph.
+
+---
+
 ## 2. Lexical Calques Table (جدول گرته‌برداری‌های واژگانی)
 
 <!-- fa-check-ignore-start -->
@@ -75,6 +87,7 @@ English requires *a/an* before singular count nouns; Persian uses the enclitic `
 | *Be able to* | `قادر به انجام ... هستید` | `می‌توانید ... انجام دهید` / `می‌تونید` |
 | *Not only ... but also* | `نه تنها ... بلکه همچنین` | `هم ... و هم ...` / `علاوه بر ...` |
 | *Experience [noun]* | `سرعت بالا را تجربه کنید` | `سایت سریع‌تر باز می‌شود` / `ببینید چقدر سریع‌تره` |
+| *This [text / option / method] works* | `همین متن کار می‌کند` / `این روش کار می‌کند` | `همین متن مناسب / کافی است` · `این روش جواب می‌دهد` *(«کار کردن» فقط برای دستگاه و انسان است)* |
 | *Let's take a look at / dive into* | `بیایید نگاهی بیندازیم به / شیرجه بزنیم در` | `بررسی کنیم` / `بریم سراغِ` |
 | *The best version of yourself* | `بهترین نسخهٔ خودتان` | (State the specific improvement) |
 | *Journey* (for onboarding/process) | `سفر کاربری شما` | `مسیر استفاده` / `مراحل کار` |

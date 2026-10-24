@@ -41,7 +41,10 @@ The Zero-Width Non-Joiner separates morphemes inside a single phonological word 
 
 <!-- fa-check-ignore-end -->
 
-### 2.2 Lexicalized Solid Words (پیوسته‌نویسی — Do NOT insert ZWNJ)
+### 2.2 Coordinate Comparative / Superlative Agreement
+Never coordinate a comparative (`ـتر`) with a superlative (`ـترین`) before a single head noun (`این روش بزرگ‌تر و مهم‌ترین بخش پروژه است` ❌ → `این روش بزرگ‌ترین و مهم‌ترین بخش پروژه است` ✅).
+
+### 2.3 Lexicalized Solid Words (پیوسته‌نویسی — Do NOT insert ZWNJ)
 Per Farhangestan 1401, short lexicalized words whose components have fused or whose first element ends in a non-joining letter (`ا، د، ذ، ر، ز، ژ، و`) are often written solid:
 - **Comparatives:** `بهتر`, `بیشتر`, `کمتر`, `بدتر`, `پیشتر` (never `به‌تر` or `بیش‌تر`).
 - **Compounds & prefixes:** `همکار`, `همراه`, `همدل`, `امروزه`, `چنانچه`, `بنابراین`, `درحالی‌که`, `تاجایی‌که`, `کتابخانه`, `آشپزخانه`, `دلگیر`, `خودکار`, `پشتکار`.

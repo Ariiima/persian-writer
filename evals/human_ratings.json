@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "ratings": [
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 1,
+      "skill": "ali2000hos",
+      "score": 3,
+      "tags": [
+        "stiff",
+        "calque"
+      ],
+      "note": " \"همین متن کار میکند”is wrong ",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 1,
+      "skill": "native_farsi",
+      "score": 5,
+      "tags": [
+        "natural"
+      ],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 1,
+      "skill": "persian_writer",
+      "score": 5,
+      "tags": [],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 1,
+      "skill": "raw_claude",
+      "score": 5,
+      "tags": [],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 1,
+      "skill": "simplified_tech",
+      "score": 5,
+      "tags": [],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 1,
+      "skill": "ali2000hos",
+      "score": 4,
+      "tags": [
+        "natural"
+      ],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 1,
+      "skill": "native_farsi",
+      "score": 5,
+      "tags": [
+        "natural"
+      ],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 1,
+      "skill": "persian_writer",
+      "score": 5,
+      "tags": [
+        "natural"
+      ],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 1,
+      "skill": "raw_claude",
+      "score": 3,
+      "tags": [
+        "stiff"
+      ],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 1,
+      "skill": "simplified_tech",
+      "score": 3,
+      "tags": [
+        "stiff"
+      ],
+      "note": "",
+      "reviewer": "Ariiima"
+    }
+  ]
+}

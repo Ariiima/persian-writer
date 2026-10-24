@@ -57,5 +57,14 @@ class TestFaCheck(unittest.TestCase):
         self.assertTrue(rep["ok"], msg=rep["issues"])
 
 
+
+    def test_detects_inanimate_works_calque_and_validation_bloat(self):
+        text = "شماره موبایل باید ۱۱ رقم باشد. لطفاً شماره را دوباره بررسی کنید. در این حالت همین متن کار می‌کند."
+        rep = analyze_text(text)
+        cats = {i["category"] for i in rep["issues"]}
+        self.assertIn("calque-inanimate-works", cats)
+        self.assertIn("ui-validation-bloat", cats)
+
+
 if __name__ == "__main__":
     unittest.main()

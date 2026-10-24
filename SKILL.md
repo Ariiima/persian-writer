@@ -15,7 +15,7 @@ when_to_use: >-
   social captions, or video/podcast voiceover scripts—even if the user prompts
   in English or Finglish.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   authorities: "دستور خطّ فارسی فرهنگستان (ویراست ۱۴۰۱)؛ Microsoft fa-IR Style Guide"
 license: MIT
 ---
@@ -48,6 +48,7 @@ Determine the register from the **deliverable's destination and audience**, **NE
 | **`semi-formal`** (`نیمه‌رسمی / آموزشی`) | Blog posts, newsletters, tutorials, technical guides, LinkedIn | `است`, `می‌شود`, `می‌کنیم` | `را`, `این / آن`, direct `شما` | `references/registers.md` |
 | **`light-colloquial`** (`محاورهٔ نرم`) | Friendly consumer app UI, onboarding, casual landing pages, support chat | `می‌شه`, `می‌تونید`, `داره`, `ـه` | Keeps **`را`** and **`این / آن`** | `references/ui-and-microcopy.md` |
 | **`full-colloquial`** (`محاورهٔ کامل / نریشن`) | Instagram/Telegram, friendly DMs, podcast & video voiceover (`نریشن`) | `می‌شه`, `می‌خوام`, `می‌رم`, `می‌گه`, `بذار`, `ـه` | **`رو`**, **`اون / اونا / اینا`**, `واسه`, `دیگه` | `references/registers.md` §4C |
+| **`academic`** (`نگارش علمی و پژوهشی`) | Theses (`پایان‌نامه`), papers (`مقاله`), abstracts (`چکیده`), research reports | `است`, `شد`, `نشان می‌دهد` (impersonal passive OK) | `را`, `این / آن`, `پژوهش حاضر` | `references/registers.md` §4D |
 
 ### 🔴 The Register Lock Rule
 Once you select a register, **never cross between `کتابی` and `شکسته`** outside direct quotes (`«...»`):
@@ -78,11 +79,14 @@ Read `references/anti-calque-and-style.md` for the full catalogue. Apply these c
 7. **🔴 Ban Literal English Idiom Calques:**
    - `در پایان روز` (*at the end of the day*) → `در نهایت` / `آخرش`
    - `شما را قادر می‌سازد تا` (*enables you to*) → `به شما امکان می‌دهد` / `کمکتان می‌کند`
+   - `[متن / گزینه / روش / رنگ] کار می‌کند` (*this text/option/method works*) → `مناسب است` / `کافی است` / `جواب می‌دهد` (`کار کردن` in Persian is only for machines, devices, or people—never say `همین متن کار می‌کند`!)
    - `نه تنها ... بلکه همچنین` (*not only... but also*) → `هم ... و هم ...` / `علاوه بر`
    - `X را تجربه کنید` (*experience X*) → state what actually happens (`سایت در ۲ ثانیه باز می‌شود`)
    - `شیرجه بزنیم به` / `نگاهی بیندازیم به` → `بررسی کنیم` / `بریم سراغِ`
    - `پتانسیل X را آزاد کنید` (*unlock X's potential*) → `از تمام توان/امکانات X استفاده کنید` or `X را متحول/به‌روز کنید` (never delete the sentence in translation!)
    - `بهترین نسخهٔ خودتان` → `بهترین عملکرد خودتان` · `سفر کاربری` → `مسیر استفاده`
+8. **🔴 Pro-Drop & POV Discipline (`حذف ضمیر فاعلی زاید`):**
+   Persian verb endings (`-م، -ی، -د، -یم، -ید، -ند`) already encode the subject. Do not repeat `شما`, `من`, or `ما` across clauses (`می‌توانید فایل را ویرایش کنید` ✅ vs `شما می‌توانید فایل را ویرایش کنید و شما...` ❌). Explain system mechanics impersonally, user steps in 2nd-person verb, and organization commitments in 1st-person plural.
 
 ---
 
@@ -131,10 +135,12 @@ See `references/orthography-1401.md` for full edge cases.
 4. **🔴 Fake Tanvin vs. Required Tanvin:**
    - **Ban fake tanvin:** `گاهاً` ← `گاهی` · `دوماً / سوماً` ← `دوم اینکه / سوم اینکه` · `ناچاراً` ← `به‌ناچار` · `تلفناً` ← `تلفنی` · `زباناً` ← `زبانی`.
    - **Keep required tanvin:** `لطفاً`, `حتماً`, `واقعاً`, `مثلاً`, `کاملاً`, `اصلاً`, `معمولاً`, `تقریباً`, `دقیقاً`, `فعلاً`, `قطعاً`.
-5. **🔴 Digits, Currency & Singular Nouns:**
+5. **🔴 Coordinate Adjective Agreement (`هماهنگی صفت برتر و برترین`):**
+   Never coordinate a comparative (`ـتر`) and a superlative (`ـترین`) before a noun (`بزرگ‌تر و مهم‌ترین بخش` ❌ → `بزرگ‌ترین و مهم‌ترین بخش` ✅).
+6. **🔴 Digits, Currency & Singular Nouns:**
    - Use Persian digits (`۰۱۲۳۴۵۶۷۸۹`) in prose, `٬` for thousands (`۱۲٬۵۰۰٬۰۰۰ تومان`), and `٪` for percent (`۲۰٪`). Keep Latin digits only in code, URLs, and Latin technical IDs (`ESP32`, `v2.1`).
    - **Noun after a number is always singular:** `۵ ویژگی کلیدی` و `۳ روز کاری` (never `۵ ویژگی‌های کلیدی` ❌).
-6. **🔴 Punctuation:** Use `،` `؛` `؟` and `«گیومه»`. Attach punctuation to the preceding word with no space before it (`سلام، خوبی؟`).
+7. **🔴 Punctuation:** Use `،` `؛` `؟` and `«گیومه»`. Attach punctuation to the preceding word with no space before it (`سلام، خوبی؟`).
 
 ---
 
@@ -144,9 +150,13 @@ See `references/orthography-1401.md` for full edge cases.
 2. **Draft directly in Persian** using verb-centric clauses:
    - **Strict 1-to-1 Fidelity on Rewrites & Translations:** Preserve every claim, actor, and list structure from the source text. **Never** add unstated product details (e.g., do not add "via mobile app" or "automatic categorization" if the source text did not state it), and **never** drop a sentence.
    - **Formal vs. Colloquial Morphology:**
-     - In `formal-human` and `formal-admin`, use animate plurals with `ـان` (`مهمانان`, `کاربران`, `ساکنان`, `مهندسان`) rather than `ـها` (`مهمان‌ها`).
-     - In `light-colloquial`, only verbs soften (`می‌تونید`, `می‌شه`, `باشه`); keep standard `را`, `این / آن`, `به آن` (never `رو`, `اون`, `بهش / ازش / توش / واسه`), and write plural possessive with `ـهایتان` (`هزینه‌هایتان`, `هدف‌هایتان`—never `هزینه‌هاتان`).
+     - In `formal-human` and `formal-admin`, use animate plurals with `ـان` (`مهمانان`, `کاربران`, `ساکنان`, `مهندسان`), write `نصب آن` rather than colloquial `نصبش`, and avoid spoken idioms like `دست نمی‌زند`.
+     - In `light-colloquial`, soften verbs (`می‌تونید`, `می‌شه`, `می‌ره`, `باشه`) AND 2nd-person possessive clitics (`خرج‌هاتون`, `پول‌تون`, `حساب‌تون`—because pairing formal `ـتان` with spoken `می‌ره` feels jarring), while keeping standard **`را`** and **`این / آن`** (never `رو`, `اون`, `واسه`, `توش`).
    - **Lexical Precision & Cultural Anchors:** Never calque *"track money/expenses"* as `ردیابی پول/هزینه` (`ردیابی` is for parcels/missiles; use `مدیریت هزینه‌ها` or `حساب دخل‌وخرج`). "New Year" is `اول سال / نوروز` (never `اول بهمن` or `ژانویه`).
+   - **UI Validation vs. Network Errors (from Human Eval):**
+     - **Inline field validation** (phone prefix, digit count, email format) must be **one single 5–8 word sentence** (`شماره موبایل باید با ۰۹ شروع شود.` · `شماره موبایل باید ۱۱ رقم باشد.`). **Never** append a second scolding/padding sentence (`لطفاً دوباره بررسی کنید` / `لطفاً رقم‌های باقی‌مانده را وارد کنید`), and keep recurring nouns (`شماره موبایل`) spelled identically across sibling strings.
+     - **Action/network errors** state what failed + recovery action (`کد ارسال نشد. اینترنت خود را بررسی کنید و دوباره تلاش کنید.`).
+   - **Deliver Only the Requested Copy (Zero Unsolicited Commentary):** Do **not** append unrequested «نکته‌های پیاده‌سازی» or grammar explanations (e.g., `هر دو دکمه به‌صورت اسم مصدر نوشته شده‌اند...`) unless the user explicitly asks for rationale.
 3. **Run verification silently before answering:**
    - **If shell / code execution is available:** run `python3 scripts/fa_check.py --check --register <register>` on the draft (or `python3 scripts/fa_check.py --fix` for safe orthographic repairs). Fix every reported `🔴` error and `🟡` warning before presenting the text.
    - **If in a chat-only environment:** mentally grep the draft for:

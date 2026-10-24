@@ -20,15 +20,16 @@ Apply this procedure **before** generating a single word:
 
 ---
 
-## 2. The 5 Registers at a Glance
+## 2. The 6 Registers at a Glance
 
 | Register | Typical Surfaces | Verb Forms | Object Marker & Pronouns | Tone & Boundaries |
 |---|---|---|---|---|
 | **1. `formal-human`** (`رسمی روان`) | Proposals, reports, B2B websites, product UI (standard), press releases, emails | Full written: `است`, `شد`, `می‌شود`, `می‌توانید` | `را`, `این / آن`, `آن‌ها`, `شما` | Direct, concrete, warm, active. **Zero** `می‌باشد / گردید / نمود`. |
 | **2. `formal-admin`** (`رسمی اداری`) | Official letters (`نامه اداری`) to tax office, ministries, banks, universities | Full written: `است`, `می‌شود`, `رسید` + polite formulas (`دستور فرمایید`) | `را`, `این / آن`, `ایشان / جناب‌عالی` | Uses fixed letter furniture (موضوع، گیرنده، با سلام و احترام). Still **no** `می‌باشد`. |
 | **3. `semi-formal`** (`نیمه‌رسمی / آموزشی`) | Blog articles, newsletters, tutorials, technical guides, LinkedIn posts | Full written: `است`, `می‌شود`, `می‌کنیم` | `را`, `این / آن`, direct `شما` | Conversational rhythm and questions (`چرا؟`) with standard written morphology. |
-| **4. `light-colloquial`** (`محاورهٔ نرم`) | Consumer product UI, friendly onboarding, casual landing pages, support chat | Spoken verbs: `می‌شه`, `می‌تونید`, `داره`, `ـه` (`خوبه`) | Keeps **`را`** and **`این / آن`** | Warm and approachable without street slang (`واسه / توش / اونا`). Polite plural (`شما بگید`). |
+| **4. `light-colloquial`** (`محاورهٔ نرم`) | Consumer product UI, friendly onboarding, casual landing pages, support chat | Spoken verbs: `می‌شه`, `می‌تونید`, `می‌ره`, `داره`, `ـه` (`خوبه`) | Keeps **`را`** and **`این / آن`** + spoken possessive `ـتون` (`خرج‌هاتون`, `پول‌تون`) | Warm and approachable without street slang (`واسه / توش / اونا / رو`). |
 | **5. `full-colloquial`** (`محاورهٔ کامل / گفتاری`) | Instagram/Telegram, DMs, podcast scripts, video voiceover (`نریشن`) | Spoken + clipped: `می‌شه`, `می‌خوام`, `می‌رم`, `می‌گه`, `بذار`, `ـه / ـست` | **`رو`** (`کتاب رو`), **`اون / اونا / اینا`**, `واسه`, `دیگه`, `مگه` | Written as spoken. Breath-length clauses (<15 words for audio). |
+| **6. `academic`** (`نگارش علمی و پژوهشی`) | Theses (`پایان‌نامه`), papers (`مقاله`), abstracts (`چکیده`), research reports | Standard written (`است`, `شد`, `نشان می‌دهد`); impersonal passive allowed when actor is general (`داده‌ها گردآوری شد`) | `را`, `این / آن`, `پژوهش حاضر` | Measured, hedged, zero `تعارف`, zero `می‌باشد`, zero `اولاً/ثانیاً` skeleton. |
 
 ---
 
@@ -73,3 +74,10 @@ An administrative letter uses standard formal-human verbs (`است`, `می‌ش�
   - Keep clauses to **one breath** ($\le 12	ext{–}15$ words).
   - Avoid nested `که` relative clauses; chain short clauses with `و`, `ولی`, `چون`, or a pause.
   - Note for Persian TTS pipelines: standard written Persian (`رسمی روان`) reads cleaner in TTS engines unless full colloquial is specifically desired; never mix spoken verb endings (`می‌بره`) into a formal script.
+
+### D. `academic` (`نگارش علمی و پژوهشی`)
+- **Conventional headings:** Use standard Persian scholarly headings: `چکیده`, `واژگان کلیدی`, `مقدمه`, `پیشینهٔ پژوهش`, `روش پژوهش`, `یافته‌ها`, `بحث و نتیجه‌گیری`.
+- **Funnel `مقدمه` & Synthesized Background:** Move from the real-world problem → synthesized prior approaches (group by method/limitation, never a robotic list of «X (۲۰۱۸) کرد... Y (۲۰۱۹) کرد...») → the specific research gap (`خلأ پژوهش`) → the contribution of the current study (`در این پژوهش...`).
+- **Calibrated Claims & `معنادار`:** Reserve `معنادار` strictly for statistical significance ($p < 0.05$); use `چشمگیر` or `قابل‌توجه` for practical magnitude. Use one hedge where appropriate (`شواهد نشان می‌دهد`, `به نظر می‌رسد`), never stacked hedges (`شاید بتوان گفت که احتمالاً`).
+- **Zero Fabricated Citations:** If no real bibliography is provided, insert explicit placeholders like `[منبع]` or `[۱]`—never invent author names, years, or DOIs.
+- **No `اولاً / ثانیاً` or Bullet Skeletons:** Write connected scholarly paragraphs; embed short enumerations inside prose with concrete metrics. Still **never** use `می‌باشد` or `گردید`.

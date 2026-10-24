@@ -68,6 +68,8 @@ BANNED_FOSSILS: List[Tuple[str, str, str]] = [
 
 # 2. Calque / Translationese signals (🟡 Warning)
 CALQUE_PATTERNS: List[Tuple[str, str, str]] = [
+    (r"(?:این|همین|آن|کدام)\s+(?:متن|جمله|کلمه|واژه|عبارت|گزینه|عنوان|تیتر|رنگ|طرح)\s+(?:خوب\s+|بهتر\s+)?کار\s+می[‌\s]?کن(?:د|ه)", "calque-inanimate-works", "Calque of English «this text/option works»: in Persian «کار کردن» is for machines/people; use «مناسب است», «کافی است», or «جواب می‌دهد»"),
+    (r"لطفاً?\s+(?:شماره\s+را\s+)?دوباره\s+بررسی\s+کنید|رقم[‌\s]?های\s+(?:باقی[‌\s]?مانده|وارد[‌\s]?شده)\s+را\s+(?:وارد|بررسی)\s+کنید", "ui-validation-bloat", "Redundant 2nd-sentence padding on inline validation; keep field validation to one crisp sentence (e.g. «شماره موبایل باید ۱۱ رقم باشد.»)"),
     (r"توسط\s+[آ-ی]+", "calque-passive-tavassot", "Avoid «توسط + actor» passive calque; rewrite in active voice with the actor as subject"),
     (r"نه[\u200c\s]+تنها\s+[^.؟!]+بلکه\s+همچنین", "calque-not-only-but-also", "English «not only... but also» calque; use «هم ... و هم ...» or «علاوه بر»"),
     (r"شما\s+را\s+قادر\s+می[\u200c\s]?سازد|قادر\s+می[\u200c\s]?سازد\s+تا", "calque-enables-you", "Calque of «enables you to»; use «به شما امکان می‌دهد» or «کمکتان می‌کند»"),
@@ -305,6 +307,10 @@ def analyze_text(raw_text: str, expected_register: str = "auto") -> Dict:
         if is_persian_dominant(line) and ("—" in line or " -- " in line):
             add_issue("error", "em-dash", idx, "—", "Em-dash is an English AI tell in Persian; use «،», «؛», parentheses, or a period")
 
+                # Polite imperative ending in ? or ؟ (e.g., لطفاً بررسی کنید؟ -> .)
+        if re.search(r"لطفاً[^.؟!\n]{1,80}(?<!می)(?<!می\u200c)(?<!می\s)(?:کنید|نمایید|بفرمایید|بدهید|بفرستید)\s*[?؟]", line):
+            add_issue("error", "imperative-question-mark", idx, "کنید؟", "Polite imperative («لطفاً ... کنید.») is a request, not a question; end with «.» instead of «؟»")
+
         # ASCII comma/question/semicolon adjacent to Persian characters
         for m in re.finditer(rf"[{FA_LETTERS}]\s*([,;?])", line):
             rep = {",": "،", ";": "؛", "?": "؟"}[m.group(1)]
@@ -312,7 +318,7 @@ def analyze_text(raw_text: str, expected_register: str = "auto") -> Dict:
 
         # ASCII digits adjacent to Persian words (outside Latin tokens like ESP32, v2, 4G/5G)
         if is_persian_dominant(line):
-            for m in re.finditer(rf"(?<![A-Za-z0-9_/-])([0-9]+)(?![A-Za-z0-9_/-])", line):
+            for m in re.finditer(rf"(?<![A-Za-z0-9_/-])(?<![A-Za-z]\s)(?<![A-Za-z]\s\s)([0-9]+)(?![A-Za-z0-9_/-])", line):
                 add_issue("warning", "ascii-digit", idx, m.group(1), f"Use Persian digits «{m.group(1).translate(ASCII_TO_FA_DIGITS)}» in Persian prose")
 
     # 8. Document-level Register Consistency Check (outside quotes)
@@ -440,6 +446,7 @@ def safe_fix_text(raw_text: str, convert_digits: bool = True) -> str:
     # 4. Punctuation fixes next to Persian characters
     text = re.sub(rf"([{FA_LETTERS}])\s*,", r"\1،", text)
     text = re.sub(rf"([{FA_LETTERS}])\s*;", r"\1؛", text)
+    text = re.sub(r"(لطفاً[^.؟!\n]{1,80}(?<!می)(?<!می\u200c)(?<!می\s)(?:کنید|نمایید|بفرمایید|بدهید|بفرستید))\s*[?؟]", r"\1.", text)
     text = re.sub(rf"([{FA_LETTERS}])\s*\?", r"\1؟", text)
     text = re.sub(r"\s*—\s*", "، ", text)
 
@@ -449,7 +456,7 @@ def safe_fix_text(raw_text: str, convert_digits: bool = True) -> str:
         for line in text.splitlines(keepends=True):
             if re.search(rf"[{FA_LETTERS}]", line):
                 line = re.sub(
-                    r"(?<![A-Za-z0-9_/-])([0-9]+)(?![A-Za-z0-9_/-])",
+                    r"(?<![A-Za-z0-9_/-])(?<![A-Za-z]\s)(?<![A-Za-z]\s\s)([0-9]+)(?![A-Za-z0-9_/-])",
                     lambda m: m.group(1).translate(ASCII_TO_FA_DIGITS),
                     line,
                 )
