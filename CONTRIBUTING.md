@@ -36,7 +36,9 @@ Whenever you spot an unnatural, calqued, or stiff Persian sentence produced by C
 ### Step 1: Classify the Failure Mode
 Ask which layer failed:
 1. **Syntactic / Lexical Calque (`calque` / `بوی ترجمه`):** Did the model translate an English verb/idiom literally?
-   - *Real example from human rating (`human_ratings.json`):* A competing skill wrote `در خطای ۲ اگر کاربر بیش از ۱۱ رقم وارد کند، همین متن کار می‌کند` (*"this text works"*). In Persian, `کار کردن` is only for machines, devices, or people—never for a piece of text or an option (`همین متن مناسب / کافی است` or `جواب می‌دهد`).
+   - *Example A (`human_ratings.json`, Task #1):* Writing `همین متن کار می‌کند` (*"this text works"*). In Persian, `کار کردن` is only for machines, devices, or people—never for a piece of text or an option (`همین متن مناسب / کافی است` or `جواب می‌دهد`).
+   - *Example B (`human_ratings.json`, Task #5):* Writing `یک دستگاه هر دو در را مدیریت می‌کند` (*"manages both doors"*). Physical doors and keys are **opened** (`باز می‌کند`), not "managed" (`مدیریت می‌کند`).
+   - *Example C (`human_ratings.json`, Task #2):* Writing `با اجازهٔ شما، گوشی به بلوتوث وصل می‌شود` (*"With your permission..."*) in an OS permission dialog, or `با اولین باز شدن در` (*"With the first opening of the door"*) instead of `به‌محض باز شدن اولین در`.
 2. **Stiff / Padded UX or Bureaucratic Prose (`stiff` / `خشک و اداری`):** Did the model add patronizing filler or government-office fossils?
    - *Real example from human rating:* Appending a second scolding sentence to an inline form-field validation error (`شماره موبایل باید ۱۱ رقم باشد. لطفاً رقم‌های باقی‌مانده را وارد کنید.`). Inline field errors under an input must be **one single 5–8 word clause** (`شماره موبایل باید ۱۱ رقم باشد.`).
 3. **Register Mixing (`register_mix` / `قاطی شدن لحن`):** Did the model mix written (`کتابی`) and spoken (`شکسته`) forms, or pair spoken verbs (`می‌ره`) with formal possessive clitics (`پول‌تان` instead of `پول‌تون`) in `light-colloquial`?

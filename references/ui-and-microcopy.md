@@ -63,19 +63,38 @@ Iranian users are sensitive to spammy or cryptic SMS/push copy:
 
 ---
 
-## 5. Product & Landing Page Copywriting
-1. **Use the everyday word the customer actually says:**
-   - `گوشی` (or `موبایل`), not `تلفن همراه هوشمند`
-   - `فاکتور` and `رسید`, not `سند صورت‌حساب مالی`
-   - `اینترنت`, not `شبکهٔ جهانی`
-   - `اپلیکیشن` or `برنامه`, not `نرم‌افزار کاربردی تلفن همراه`
-2. **Concrete mechanisms over adjectives:**
-   - ❌ `سیستم پیشرفته و منحصربه‌فرد ما امنیت بی‌نظیری را برای ساختمان شما به ارمغان می‌آورد.`
-   - ✅ `فاکتورهای ماهانه را در ۳۰ ثانیه صادر کنید و لینک پرداخت مستقیم بفرستید.`
-3. **Reassurance beats artificial scarcity:**
-   Iranian buyers distrust fake countdowns (`فقط تا پایان امشب!`). Build trust with concrete guarantees: `۱۸ ماه گارانتی تعویض`, `نصب در کمتر از ۳۰ دقیقه`, `بدون نیاز به کارت بانکی`.
+## 5. Empty States & Permission Dialogs (وضعیت خالی و دیالوگ دسترسی)
+
+1. **Empty States (`وضعیت خالی`):**
+   - **Keep the time/filter scope in the title:** If the screen is «ترددهای امروز», include `امروز` in the title (`امروز هنوز دری باز نشده است` or `امروز ترددی ثبت نشده است`).
+   - **Place `اولین` on the noun, never before a verbal noun (`مصدر`):**
+     - ❌ `با اولین باز شدن در، زمان آن نمایش داده می‌شود.` (*"With the first opening of the door"*)
+     - ✅ `به‌محض باز شدن اولین در، ورود و خروج‌ها در این صفحه نمایش داده می‌شود.`
+     - ✅ `با باز شدن اولین در، زمان و نام فرد در همین صفحه ثبت می‌شود.`
+2. **Permission Dialogs (`دیالوگ درخواست دسترسی`):**
+   - **🔴 Never write `«با اجازهٔ شما»`:** In Persian, `با اجازهٔ شما` is social *taarof* used before speaking or leaving a room—never use it to mean *"With your permission, the app accesses Bluetooth"*.
+   - State the concrete trigger condition + how the feature helps + direct action CTA (`وقتی اینترنت قطع باشد، برنامه با بلوتوث در ساختمان را باز می‌کند. برای استفاده در این حالت، دسترسی بلوتوث را فعال کنید.` · دکمه‌ها: `فعلاً نه` / `تأیید و ادامه`).
 
 ---
+
+## 5B. Product & Landing Page Copywriting (کپی‌رایتینگ محصول و لندینگ)
+
+Models often write landing pages that pass grammar checks but still read like a dry hardware manual (`خشک و کاتالوگی`). To make formal product copy feel alive, crisp, and human:
+
+1. **Hero Headlines: Balanced Nominal Pairs or Direct Concrete Action (No Spec-Sheet Sentences):**
+   - ❌ `در ساختمان و پارکینگ را با یک دستگاه و از روی گوشی باز کنید` *(clunky, overloaded sentence)*
+   - ✅ `فقط یک دستگاه برای کل ساختمان.`
+   - ✅ `در ورودی و پارکینگ، تنها با یک اشاره روی گوشی.`
+   - ✅ `دسته‌کلیدهای سنگین و ریموت‌های جاگیر؛ وقتش است از آن‌ها بگذریم.`
+2. **Never Use `مدیریت کردن` for Physical Objects (Doors, Keys, Locks, Lights):**
+   - ❌ `یک دستگاه هر دو در را مدیریت می‌کند.` (*"manages both doors"* — calque!)
+   - ✅ `یک دستگاه هم در ورودی و هم در پارکینگ را باز می‌کند.`
+3. **Replace Bureaucratic Clauses in Feature Cards with Everyday Human Phrasing:**
+   - ❌ `فقط در بازهٔ زمانی تعیین‌شده / مشخص‌شده کار کند` → ✅ `فقط در همان ساعتی که مشخص می‌کنید کار کند` (or `به مهمان یا پیک دسترسی موقت بدهید؛ فقط برای ساعتی که می‌خواهید`).
+   - ❌ `نصب آن به تغییر سیم‌کشی ساختمان نیاز ندارد` → ✅ `روی همان سیم‌کشی فعلی ساختمان و بدون تخریب نصب می‌شود`.
+   - ❌ `از روی تلفن همراه هوشمند` → ✅ `روی گوشی`.
+4. **No Visible Diacritics (`ـِ / ـَ`) in On-Screen Copy:**
+   Never put visible kasre (`درِ ورودی`) or tashdid (`تردّد`) in on-screen UI or web copy; write plain `در ورودی` and `تردد`. Reserve diacritics strictly for phonetic TTS prompts when disambiguating homographs for a voice engine.
 
 ## 6. Technical Documentation & Developer Guides (مستندات فنی بی‌ابهام)
 1. **One Instruction Per Sentence:** Write procedures as numbered steps using polite plural imperatives (`فایل پیکربندی را باز کنید. مقدار کلید را تغییر دهید.`). Never chain 3 actions with `و` or participial `کرده و...`.

@@ -66,5 +66,16 @@ class TestFaCheck(unittest.TestCase):
         self.assertIn("ui-validation-bloat", cats)
 
 
+
+    def test_detects_door_manage_and_permission_calques(self):
+        text = "با اجازهٔ شما، یک دستگاه هر دو در را مدیریت می‌کند و با اولین باز شدن در در بازهٔ زمانی مشخص‌شده فعال می‌شود."
+        rep = analyze_text(text)
+        cats = {i["category"] for i in rep["issues"]}
+        self.assertIn("calque-manage-physical-object", cats)
+        self.assertIn("calque-with-your-permission", cats)
+        self.assertIn("calque-ordinal-before-gerund", cats)
+        self.assertIn("stiff-time-window", cats)
+
+
 if __name__ == "__main__":
     unittest.main()

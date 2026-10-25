@@ -15,7 +15,7 @@ when_to_use: >-
   social captions, or video/podcast voiceover scripts—even if the user prompts
   in English or Finglish.
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   authorities: "دستور خطّ فارسی فرهنگستان (ویراست ۱۴۰۱)؛ Microsoft fa-IR Style Guide"
 license: MIT
 ---
@@ -80,6 +80,10 @@ Read `references/anti-calque-and-style.md` for the full catalogue. Apply these c
    - `در پایان روز` (*at the end of the day*) → `در نهایت` / `آخرش`
    - `شما را قادر می‌سازد تا` (*enables you to*) → `به شما امکان می‌دهد` / `کمکتان می‌کند`
    - `[متن / گزینه / روش / رنگ] کار می‌کند` (*this text/option/method works*) → `مناسب است` / `کافی است` / `جواب می‌دهد` (`کار کردن` in Persian is only for machines, devices, or people—never say `همین متن کار می‌کند`!)
+   - `[در / کلید / قفل] را مدیریت می‌کند` (*manages the door/key*) → `باز می‌کند` (`مدیریت کردن` is for teams/projects, never physical doors or keys!)
+   - `با اجازهٔ شما` in OS/app permission dialogs (*with your permission*) → delete (`با اجازهٔ شما` is social taarof; state the permission benefit directly)
+   - `با اولین باز شدن در` (*with the first opening of the door*) → `به‌محض باز شدن اولین در` / `با باز شدن اولین در` (place `اولین` on the concrete noun, never before a verbal infinitive)
+   - `در بازهٔ زمانی مشخص‌شده / تعیین‌شده` → `فقط در همان ساعتی که مشخص می‌کنید`
    - `نه تنها ... بلکه همچنین` (*not only... but also*) → `هم ... و هم ...` / `علاوه بر`
    - `X را تجربه کنید` (*experience X*) → state what actually happens (`سایت در ۲ ثانیه باز می‌شود`)
    - `شیرجه بزنیم به` / `نگاهی بیندازیم به` → `بررسی کنیم` / `بریم سراغِ`
@@ -156,6 +160,8 @@ See `references/orthography-1401.md` for full edge cases.
    - **UI Validation vs. Network Errors (from Human Eval):**
      - **Inline field validation** (phone prefix, digit count, email format) must be **one single 5–8 word sentence** (`شماره موبایل باید با ۰۹ شروع شود.` · `شماره موبایل باید ۱۱ رقم باشد.`). **Never** append a second scolding/padding sentence (`لطفاً دوباره بررسی کنید` / `لطفاً رقم‌های باقی‌مانده را وارد کنید`), and keep recurring nouns (`شماره موبایل`) spelled identically across sibling strings.
      - **Action/network errors** state what failed + recovery action (`کد ارسال نشد. اینترنت خود را بررسی کنید و دوباره تلاش کنید.`).
+     - **Empty states & permission dialogs:** Keep the screen's time scope in the title (`امروز هنوز دری باز نشده است`), use `به‌محض باز شدن اولین در، ورود و خروج‌ها در این صفحه نمایش داده می‌شود`, and never write `با اجازهٔ شما` in permission prompts.
+     - **Alive Marketing & Hero Copy (not dry spec-sheets):** Use punchy nominal or contrast headlines (`در ورودی و پارکینگ، با یک اشاره روی گوشی`), replace bureaucratic modifiers (`در بازهٔ زمانی مشخص‌شده` → `در همان ساعتی که می‌خواهید`; `به تغییر سیم‌کشی نیاز ندارد` → `روی همان سیم‌کشی فعلی ساختمان نصب می‌شود`), and never put visible kasre/tashdid diacritics (`درِ`, `تردّد`) in on-screen UI or web copy.
    - **Deliver Only the Requested Copy (Zero Unsolicited Commentary):** Do **not** append unrequested «نکته‌های پیاده‌سازی» or grammar explanations (e.g., `هر دو دکمه به‌صورت اسم مصدر نوشته شده‌اند...`) unless the user explicitly asks for rationale.
 3. **Run verification silently before answering:**
    - **If shell / code execution is available:** run `python3 scripts/fa_check.py --check --register <register>` on the draft (or `python3 scripts/fa_check.py --fix` for safe orthographic repairs). Fix every reported `🔴` error and `🟡` warning before presenting the text.

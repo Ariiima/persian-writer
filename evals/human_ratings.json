@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "ratings": [
     {
       "model": "claude-opus-5-5",
@@ -47,6 +47,57 @@
       "case_id": 1,
       "skill": "simplified_tech",
       "score": 5,
+      "tags": [],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 5,
+      "skill": "ali2000hos",
+      "score": 4,
+      "tags": [
+        "stiff",
+        "calque"
+      ],
+      "note": "مدیریت می‌کند؟!",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 5,
+      "skill": "native_farsi",
+      "score": 3,
+      "tags": [
+        "calque",
+        "stiff"
+      ],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 5,
+      "skill": "persian_writer",
+      "score": 3,
+      "tags": [],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 5,
+      "skill": "raw_claude",
+      "score": 4,
+      "tags": [],
+      "note": "بهتره از قبلیا ولی هنوزم خشکه",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "case_id": 5,
+      "skill": "simplified_tech",
+      "score": 4,
       "tags": [],
       "note": "",
       "reviewer": "Ariiima"
@@ -103,6 +154,55 @@
       "tags": [
         "stiff"
       ],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 2,
+      "skill": "ali2000hos",
+      "score": 5,
+      "tags": [],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 2,
+      "skill": "native_farsi",
+      "score": 4,
+      "tags": [],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 2,
+      "skill": "persian_writer",
+      "score": 3,
+      "tags": [
+        "stiff"
+      ],
+      "note": "",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 2,
+      "skill": "raw_claude",
+      "score": 3,
+      "tags": [
+        "stiff"
+      ],
+      "note": "با اجازه شما is wrong but “\"ه‌محض باز شدن اولین در، ورود و خروج‌ها در این صفحه نمایش داده می‌شود. is good",
+      "reviewer": "Ariiima"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "case_id": 2,
+      "skill": "simplified_tech",
+      "score": 4,
+      "tags": [],
       "note": "",
       "reviewer": "Ariiima"
     }

@@ -68,6 +68,10 @@ BANNED_FOSSILS: List[Tuple[str, str, str]] = [
 
 # 2. Calque / Translationese signals (🟡 Warning)
 CALQUE_PATTERNS: List[Tuple[str, str, str]] = [
+    (r"(?:در|درب|کلید|قفل|چراغ|جک)\u200c?(?:ها|های)?\s+(?:[^.،؛]{1,25}\s+)?را\s+مدیریت\s+می[\u200c\s]?کن(?:د|ند|یم|ید|م|ی|ه|ن)?", "calque-manage-physical-object", "Calque of «manages the door/key»: physical doors/locks are opened or controlled («باز می‌کند»), not «مدیریت می‌کند»"),
+    (r"با\s+اجازه[\u200cٔ\s]?ی?\s+شما", "calque-with-your-permission", "Do not use social taarof «با اجازهٔ شما» for software/OS permissions; state the permission need directly"),
+    (r"با\s+اولین\s+(?:باز\s+شدن|بسته\s+شدن|وارد\s+شدن|خارج\s+شدن|ثبت\s+شدن)", "calque-ordinal-before-gerund", "Awkward calque «با اولین باز شدن در»; place «اولین» before the noun: «به‌محض باز شدن اولین در» or «با باز شدن اولین در»"),
+    (r"در\s+بازه[\u200cٔ\s]?ی?\s+زمانی\s+(?:مشخص|تعیین)[\u200c\s]?شده", "stiff-time-window", "Stiff bureaucratic phrase «در بازهٔ زمانی مشخص‌شده»; write «فقط در ساعتی که مشخص می‌کنید» or «در زمان دلخواه شما»"),
     (r"(?:این|همین|آن|کدام)\s+(?:متن|جمله|کلمه|واژه|عبارت|گزینه|عنوان|تیتر|رنگ|طرح)\s+(?:خوب\s+|بهتر\s+)?کار\s+می[‌\s]?کن(?:د|ه)", "calque-inanimate-works", "Calque of English «this text/option works»: in Persian «کار کردن» is for machines/people; use «مناسب است», «کافی است», or «جواب می‌دهد»"),
     (r"لطفاً?\s+(?:شماره\s+را\s+)?دوباره\s+بررسی\s+کنید|رقم[‌\s]?های\s+(?:باقی[‌\s]?مانده|وارد[‌\s]?شده)\s+را\s+(?:وارد|بررسی)\s+کنید", "ui-validation-bloat", "Redundant 2nd-sentence padding on inline validation; keep field validation to one crisp sentence (e.g. «شماره موبایل باید ۱۱ رقم باشد.»)"),
     (r"توسط\s+[آ-ی]+", "calque-passive-tavassot", "Avoid «توسط + actor» passive calque; rewrite in active voice with the actor as subject"),
